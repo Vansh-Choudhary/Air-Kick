@@ -1,4 +1,3 @@
-
 import subprocess
 import re
 import csv
@@ -32,7 +31,7 @@ def check_for_essid(essid, lst):
 
 
 print("\n****************************************************************")
-print("\n* Copyright of Vansh Choudhary,2023                              *")
+print("\n* Copyright of Vansh Choudhary,2023 *")
 print("\n****************************************************************")
 
 
