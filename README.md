@@ -1,5 +1,5 @@
 # Air-Kick
-A simple script that can be use to deauthenticate all clients from a wifi network without even connecting to the wifi network.
+A simple python script that can be use to deauthenticate all clients from a wifi network without even connecting to the wifi network.
 # Working
 This script automates all the manual tasks requried for performing wifi deauth attack. It takes all required data from the user and automatically puts it in the airmon-ng and aireplay-ng commands.
 # Requirements 
