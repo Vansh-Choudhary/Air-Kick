@@ -1,3 +1,5 @@
+# THIS SCRIPT WAS MADE FOR EDUCATIONAL PURPOSES ONLY. THE AUTHOR IS NOT LIABLE FOR ANY HARM DONE USING THIS SCRIPT.
+
 import subprocess
 import re
 import csv
@@ -31,7 +33,7 @@ def check_for_essid(essid, lst):
 
 
 print("\n****************************************************************")
-print("\n* Copyright of Vansh Choudhary,2023 *")
+print("\n* Freshly brewed by Vansh Choudhary *")
 print("\n****************************************************************")
 
 
