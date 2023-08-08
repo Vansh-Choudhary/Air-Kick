@@ -1,3 +1,4 @@
+![Screenshot from 2023-08-08 22-38-32](https://github.com/Vansh-Choudhary/Air-Kick/assets/138108820/87057be1-1512-4bb2-8dc5-b6461134a6b0)
 # Air-Kick
 A simple python script that can be use to deauthenticate all clients from a wifi network without even connecting to the wifi network.
 # Working
